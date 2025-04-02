@@ -3,7 +3,7 @@
 ## 🚀 Project Overview
 A Flask-based web app to visualize CPU scheduling algorithms (FCFS, SJF, Round Robin, Priority) with interactive Gantt charts.
 
-<img src="https://github.com/MohammedSardarSaajit4488/WeCreate/blob/main/imgs/cpu.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/cpu.gif" width="100" />
 
 ## 👨‍💻 Author
 Sai Agasthya
@@ -17,7 +17,7 @@ Sai Agasthya
 ## 📜 License
 MIT License
 
-<img src="https://github.com/MohammedSardarSaajit4488/WeCreate/blob/main/imgs/stacked-graph.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/stacked-graph.gif" width="100" />
 
 ---
 
@@ -27,13 +27,12 @@ MIT License
 ✅ User-defined process inputs (arrival, burst, priority)  
 ✅ Auto-launches in browser at http://127.0.0.1:5000/
 
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/gifs/eye-target.gif" width="100" />
 
 ---
 
 ## ⚡ Quick Setup
 bash
-git clone https://github.com/[your-username]/cpu-scheduling-visualizer.git
+git clone https://github.com/SaiAgasthyaV/cpu-scheduling-visualizer.git
 cd cpu-scheduling-visualizer
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
@@ -41,7 +40,7 @@ pip install flask plotly
 python app.py
 
 
-<img src="https://github.com/MohammedSardarSaajit4488/WeCreate/blob/main/imgs/analytics.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/analytics.gif" width="100" />
 
 ---
 
@@ -52,27 +51,23 @@ python app.py
 4️⃣ Set Round Robin quantum (e.g., 2)  
 5️⃣ Click 'Visualize' to see Gantt charts  
 
-<img src="https://github.com/MohammedSardarSaajit4488/WeCreate/blob/main/imgs/statistics.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/statistics.gif" width="100" />
 
 ---
 
 ## 📊 Visual Outputs (Gantt Charts)
 
 ### FCFS Scheduling
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/screenshots/fcfs_scheduling.png" width="400" />
-
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/gifs/cpu.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/Screenshot%202025-04-02%20225253.png" width="400" />
 
 ### SJF Scheduling
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/screenshots/sjf_scheduling.png" width="400" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/Screenshot%202025-04-02%20225300.png" width="400" />
 
 ### Round Robin Scheduling
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/screenshots/round_robin_scheduling.png" width="400" />
-
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/gifs/analytics.gif" width="100" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/Screenshot%202025-04-02%20225308.png" width="400" />
 
 ### Priority Scheduling
-<img src="https://raw.githubusercontent.com/[your-username]/cpu-scheduling-visualizer/main/screenshots/priority_scheduling.png" width="400" />
+<img src="https://github.com/SaiAgasthyaV/EECS-OS-K23HP-/blob/main/imgs/Screenshot%202025-04-02%20225315.png" width="400" />
 
 ---
 
