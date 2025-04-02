@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPU Scheduling Visualizer</title>
+    <style>
+        /* Multi-color animated gradient background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animation for the gradient background */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Main content container */
+        .container {
+            background-color: rgba(32, 32, 32, 0.9); /* Semi-transparent dark background */
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            color: #4fc3f7; /* Light blue heading */
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 20px;
+            background: rgba(50, 50, 50, 0.7); /* Dark form group background */
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            color: #81d4fa; /* Light blue labels */
+        }
+
+        input {
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent input background */
+            border: 1px solid #4fc3f7; /* Light blue border */
+            border-radius: 4px;
+            color: white;
+            width: 80px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #4fc3f7, #1976d2); /* Gradient button */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: block;
+            margin: 30px auto;
+            width: 200px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Process cards */
+        .process {
+            background: rgba(50, 50, 50, 0.7); /* Dark process card background */
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4fc3f7; /* Highlighted border */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+                padding: 20px;
+            }
+            
+            label {
+                display: block;
+                width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CPU Scheduling Algorithm Visualizer</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="process_count">Number of Processes:</label>
+                <input type="number" id="process_count" name="process_count" min="1" max="10" value="3" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantum">Time Quantum (for RR):</label>
+                <input type="number" id="quantum" name="quantum" min="1" value="2" required>
+            </div>
+            
+            <div id="processes-container">
+                <!-- Process inputs will be added here -->
+            </div>
+            
+            <button type="submit">Visualize</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('process_count').addEventListener('change', function() {
+            const count = parseInt(this.value);
+            const container = document.getElementById('processes-container');
+            container.innerHTML = '';
+            
+            for (let i = 0; i < count; i++) {
+                const div = document.createElement('div');
+                div.className = 'process';
+                div.innerHTML = `
+                    <h3>Process P${i+1}</h3>
+                    <div class="form-group">
+                        <label for="arrival_${i}">Arrival Time:</label>
+                        <input type="number" id="arrival_${i}" name="arrival_${i}" min="0" value="${i}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="burst_${i}">Burst Time:</label>
+                        <input type="number" id="burst_${i}" name="burst_${i}" min="1" value="${Math.floor(Math.random() * 5) + 1}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority_${i}">Priority:</label>
+                        <input type="number" id="priority_${i}" name="priority_${i}" min="1" value="${Math.floor(Math.random() * 5) + 1}" required>
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+        });
+        
+        // Initialize with default 3 processes
+        document.getElementById('process_count').dispatchEvent(new Event('change'));
+    </script>
+</body>
+</html>

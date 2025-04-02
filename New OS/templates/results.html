@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - CPU Scheduling Visualizer</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        .chart-container { margin-bottom: 40px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
+        .chart-title { text-align: center; margin-bottom: 10px; font-size: 1.2em; color: #444; }
+        a { display: inline-block; margin-top: 20px; color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>CPU Scheduling Results</h1>
+    
+    {% for name, chart in charts.items() %}
+    <div class="chart-container">
+        <div class="chart-title">{{ name }}</div>
+        {{ chart|safe }}
+    </div>
+    {% endfor %}
+    
+    <a href="/">← Back to input</a>
+</body>
+</html>
